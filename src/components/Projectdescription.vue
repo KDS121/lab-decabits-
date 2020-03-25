@@ -7,18 +7,18 @@
      >
   <v-row>
       <v-col cols="8">
-          <p class="headingPr">Project Title</p>
+          <p class="headingPr">{{pname.pname}}</p>
           <v-card 
         style="border-radius:11px; ">
         <v-img
          class="white--text align-end"
          height="400px"
-         src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+         v-bind:src="pname.img"
         >
         </v-img>
 
         <v-card-text class="text--primary">
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <p>{{pname.description}}</p>
         </v-card-text>
         </v-card></v-col>
         <v-col cols="4">
@@ -27,10 +27,11 @@
                   height: 48px;
                   box-sizing: border-box;
                   border-radius: 6px;"
-                  :items="items"
+                  :items="review"
                   label="Quick Review"
                   outlined>
         </v-select>
+        
         <p style=" font-family: Roboto;
                    font-style: normal; 
                    font-size:32px; 
@@ -58,6 +59,13 @@
            style="width: 394px; "
           ></v-textarea>
         <v-btn rounded color="#2695FF" style="color:white; text-transform:capitalize; font-weight:normal;">Submit</v-btn>
+        </v-col>
+      <v-col class="d-flex" cols="12" sm="6">
+          <v-select
+            :items="review"
+            label="Outlined style"
+            outlined
+          ></v-select>
         </v-col>
     <!-- <v-col cols="8" class="text" style=" padding-right:25px;background-color:orange"><p style="">Project Title</p>
       <v-card 
@@ -112,6 +120,7 @@
           ></v-textarea>
         <v-btn rounded color="#2695FF" style="color:white; text-transform:capitalize; font-weight:normal;">Submit</v-btn>
         </v-col> -->
+        
   </v-row>
   </v-container>
  <div>
@@ -153,8 +162,9 @@
 </template>
 <script>
 export default {
+  
     data: () => ({
-      items: ['Good', 'Awesome', 'Loved it', 'Not Good'],
+      review: ['Good', 'Awesome', 'Loved it', 'Not Good'],
     }),
 }
 </script>
@@ -206,3 +216,23 @@ export default {
     margin-top:900px;
 } */
 </style>
+<script>
+import Cards from './Cards';
+export default {
+
+components:{
+  Cards,
+},
+props: {
+    pname: Object,
+    stringProp: String,
+    title: String
+  },
+  methods: {
+    vclick(){
+        console.log(this.props);
+    }
+  }
+}
+
+</script>

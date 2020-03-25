@@ -1,8 +1,27 @@
 <template>
-    <div class="cards">
-      <v-container fluid>
+<div>
+    <div  class="cards">
+     
+  <div id="skl" style="padding-top:70px">
+    <v-row>
+      <v-col  v-for="(item,i) in items" :key="i" cols="6" sm="4">
+        <v-skeleton-loader 
+              
+              class="mx-auto"
+              max-width="300"
+              type="card,paragraph,button"
+            ></v-skeleton-loader>
+            </v-col>
+            </v-row>
+     </div>
+
+ 
+
+      <v-container  id="crd" style="display:none" fluid>
         <v-row  no-gutters>
+
         <v-col cols="6" sm="4" v-for="(item,i) in items" :key="i">
+           
           <v-hover
             v-slot:default="{ hover }"
             close-delay="200"
@@ -12,7 +31,8 @@
             :loading="loading"
             class="mx-auto my-12"
             max-width="374"
-            style="border-radius:16px"
+            style="border-radius:16px;"
+            @click="reserve({item})"
           >
           <v-img
             height="250"
@@ -65,18 +85,26 @@
           </v-row>
           </v-container>
           </div>
+          </div>
 </template>
  <script>
 
   export default {
    methods: {
      reserve: function({item,i}){
-       console.log(item,i);
+       this.$emit("cardClicked",{item,i})
      }
+   },
+   mounted(){
+     setTimeout( () => {
+       console.log("3s elapsed!")
+        document.getElementById("crd").style.display=="none"?document.getElementById("crd").style.display="":null
+        document.getElementById("skl").style.display==""? document.getElementById("skl").style.display="none":null
+     }, 3000)
    },
     data(){
         return {
-            items : [
+            items :  [
                 { 
                  img: 'https://cdn.vuetifyjs.com/images/cards/cooking.png' , 
                  pname: 'Project Title',
@@ -110,11 +138,11 @@
                  tags: ["javascript", "css","html"]
                 }
                 ,{
-                 img: 'https://cdn.vuetifyjs.com/images/cards/cooking.png' , 
-                 pname: 'Project Title',
+                 img: 'https://i.picsum.photos/id/964/300/300.jpg' , 
+                 pname: 'SURYA MAHLA',
                  rating: 4, 
                  numberOfPeopleRated: 143,
-                 description : 'Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.', 
+                 description : 'Mudit aur Sid ki prem katha </3', 
                  tags: ["javascript", "css","html"]
                 }
                 ,{

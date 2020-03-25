@@ -53,8 +53,12 @@
       <v-content>
        <Banner/>
        <Textarea/>
-      <Cards/> 
-      <Projectdescription/>
+       <a  href="#desc" v-smooth-scroll="{duration:3000}" style="text-decoration:none;">
+        <Cards v-on:cardClicked="onchildClick" /> 
+       </a>
+       <div id="desc" style="height:20px;">
+        </div>
+      <Projectdescription :pname="singleItem" style="display:none;" id="pdesc" />
     </v-content> 
   </v-app>
 </template>
@@ -64,19 +68,43 @@
  import Textarea from './components/Textarea';
  import Cards from './components/Cards';
  import Projectdescription from './components/Projectdescription';
+ 
+
+
+var myObject = {
+  pname: '',
+  img:"",
+  description:"" 
+}
 
 export default {
   name: 'App',
-
-
   components: {
      Banner,
     Textarea,
      Cards,
     Projectdescription,
   },
+  methods:{
+    onchildClick(value) {
+      
+      document.getElementById("pdesc").style.display="";
+      console.log(this.singleItem)
+       this.singleItem.pname = value.item.pname;
+         this.singleItem.img = value.item.img;
+         this.singleItem.description = value.item.description;
+    },
+    testIT(){
+      console.log(myObject)
+    }
+  },
 
   data: () => ({
+    singleItem:{
+      pname:'',
+      img:'',
+      description:''
+    },
     drawer: false,
     item: 1,
     items: [
