@@ -4,7 +4,7 @@
      
   <div id="skl" style="padding-top:70px">
     <v-row>
-      <v-col  v-for="(item,i) in items" :key="i" cols="6" sm="4">
+      <v-col  v-for="(item,i) in Itemfilter" :key="i" cols="6" sm="4">
         <v-skeleton-loader 
               
               class="mx-auto"
@@ -20,7 +20,7 @@
       <v-container  id="crd" style="display:none" fluid>
         <v-row  no-gutters>
 
-        <v-col cols="6" sm="4" v-for="(item,i) in items" :key="i">
+        <v-col cols="6" sm="4" v-for="(item,i) in Itemfilter" :key="i">
            
           <v-hover
             v-slot:default="{ hover }"
@@ -100,58 +100,68 @@
        console.log("3s elapsed!")
         document.getElementById("crd").style.display=="none"?document.getElementById("crd").style.display="":null
         document.getElementById("skl").style.display==""? document.getElementById("skl").style.display="none":null
-     }, 3000)
+     }, 5000) ,
+     setTimeout( () => {
+       this.$emit("AllItems",this.items)
+     }, 0),
+
+      setTimeout( () => {
+       this.$emit("AllTags",this.items.tags)
+     }, 0)
    },
+   props: {
+    Itemfilter: Array
+  },
     data(){
         return {
             items :  [
                 { 
-                 img: 'https://cdn.vuetifyjs.com/images/cards/cooking.png' , 
-                 pname: 'Project Title',
-                 rating: 4, 
+                 img: 'https://i.picsum.photos/id/169/300/300.jpg' , 
+                 pname: 'Dogs',
+                 rating: 5, 
                  numberOfPeopleRated: 143,
-                 description : 'Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.', 
-                 tags: ["javascript", "css","html"]
+                 description : 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed ', 
+                 tags: ["bootstrap", "javascript","html"]
                 }
                ,{
-                 img: 'https://cdn.vuetifyjs.com/images/cards/cooking.png' , 
-                 pname: 'Project Title',
-                 rating: 4, 
+                 img: 'https://i.picsum.photos/id/111/300/300.jpg' , 
+                 pname: 'CAR',
+                 rating: 3, 
                  numberOfPeopleRated: 143,
-                 description : 'Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.', 
-                 tags: ["javascript", "css","html"]
+                 description : 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed ', 
+                 tags: ["vue", "css","html"]
                  }
                ,{
-                  img: 'https://cdn.vuetifyjs.com/images/cards/cooking.png' , 
-                 pname: 'Project Title',
-                 rating: 4, 
+                  img: 'https://i.picsum.photos/id/239/300/300.jpg' , 
+                 pname: 'flower',
+                 rating: 2, 
                  numberOfPeopleRated: 143,
-                 description : 'Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.', 
-                 tags: ["javascript", "css","html"] 
+                 description : 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed ', 
+                 tags: ["javascript", "css","kds"] 
                  }
                 ,{
-                 img: 'https://cdn.vuetifyjs.com/images/cards/cooking.png' , 
-                 pname: 'Project Title',
+                 img: 'https://i.picsum.photos/id/249/300/300.jpg' , 
+                 pname: 'Country',
                  rating: 4, 
                  numberOfPeopleRated: 143,
-                 description : 'Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.', 
-                 tags: ["javascript", "css","html"]
+                 description : 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed ', 
+                 tags: ["sid", "android","html"]
                 }
                 ,{
-                 img: 'https://i.picsum.photos/id/964/300/300.jpg' , 
-                 pname: 'SURYA MAHLA',
-                 rating: 4, 
+                 img: 'https://i.picsum.photos/id/219/300/300.jpg' , 
+                 pname: 'Tiger',
+                 rating: 1, 
                  numberOfPeopleRated: 143,
-                 description : 'Mudit aur Sid ki prem katha </3', 
-                 tags: ["javascript", "css","html"]
+                 description : 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed ', 
+                 tags: ["javascript", "css","ashesh"]
                 }
                 ,{
-                 img: 'https://cdn.vuetifyjs.com/images/cards/cooking.png' , 
-                 pname: 'Project Title',
+                 img: 'https://i.picsum.photos/id/119/300/300.jpg' , 
+                 pname: 'Macbook',
                  rating: 4, 
                  numberOfPeopleRated: 143,
-                 description :'Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.', 
-                 tags: ["javascript", "css","html"]
+                 description :'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed ', 
+                 tags: ["swift", "css","html"]
                 }
             ]
         }

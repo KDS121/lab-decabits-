@@ -1,4 +1,7 @@
+
 <template>
+<div class="home" id="app">
+                        
   <v-app>
       <v-app-bar
       color="FFFFFF"
@@ -16,6 +19,7 @@
         hide-details
         prepend-inner-icon="mdi-magnify"
         label="Search.."
+        v-model="search"
         class="hidden-sm-and-down searchbox"
       />   
         </v-app-bar>
@@ -41,7 +45,7 @@
         <v-list-item-group v-model="item" color="primary">
           <v-list-item
             v-for="(item, i) in items"
-            :key="i"
+            :key="i" router :to="(item,i).route"
           >
             <v-list-item-icon>
               <v-icon nav min-width color="white" light v-text="item.icon" class=icons ></v-icon>
@@ -50,17 +54,20 @@
         </v-list-item-group>
       </v-list>
         </v-navigation-drawer>
+
       <v-content>
+        
        <Banner/>
        <Textarea/>
        <a  href="#desc" v-smooth-scroll="{duration:3000}" style="text-decoration:none;">
-        <Cards v-on:cardClicked="onchildClick" /> 
+        <Cards v-on:cardClicked="onchildClick" v-on:AllItems="storeData" :Itemfilter="filteredItems" v-on:AllTags="storeTags"/> 
        </a>
        <div id="desc" style="height:20px;">
         </div>
       <Projectdescription :pname="singleItem" style="display:none;" id="pdesc" />
     </v-content> 
   </v-app>
+  </div>
 </template>
 
 <script>
@@ -69,13 +76,6 @@
  import Cards from './components/Cards';
  import Projectdescription from './components/Projectdescription';
  
-
-
-var myObject = {
-  pname: '',
-  img:"",
-  description:"" 
-}
 
 export default {
   name: 'App',
@@ -94,26 +94,42 @@ export default {
          this.singleItem.img = value.item.img;
          this.singleItem.description = value.item.description;
     },
-    testIT(){
-      console.log(myObject)
+    storeData(e){
+      this.cardData = e
+    },
+    storeTags(e){
+      this.tagData = e
     }
   },
-
+    
   data: () => ({
+    search :'',
+    tagData:[],
+    cardData:[],
     singleItem:{
       pname:'',
       img:'',
       description:''
     },
     drawer: false,
-    item: 1,
+    // item: 1,
     items: [
-      { icon: 'mdi-home' },
-      {icon: 'mdi-account' },
-      { icon: 'mdi-cogs' },
-       { icon: 'mdi-cogs' },
+      { icon: 'mdi-home', route: '/' },
+      {icon: 'mdi-account', route: '/contactus' },
+      { icon: 'mdi-cogs', route: '/services' },
+       
     ],
   }),
+  computed: {
+    filteredItems: function(){
+      return this.cardData.filter((d) => {
+        // // for (var i = 0; i <d.tags.length; i++) {
+        //   return d.tags[i].toLowerCase().match(this.search)
+        // // }
+        return d.pname.toLowerCase().match(this.search.toLowerCase())
+      })
+    }
+  }
 };
 </script>
 <style>

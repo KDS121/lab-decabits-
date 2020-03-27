@@ -2,17 +2,20 @@
   <div class="project">
     <v-container class="container"  fill-height=true fluid content-space-between=true 
                   style="margin-top:50px; 
-                        margin-left:120px; 
+                       
                         width:90%;"
      >
   <v-row>
       <v-col cols="8">
           <p class="headingPr">{{pname.pname}}</p>
           <v-card 
-        style="border-radius:11px; ">
-        <v-img
+        style="border-radius:11px 11px 0px 0px;">
+        <v-img 
+         style="
+                height:400px;
+                background-position:center;"      
          class="white--text align-end"
-         height="400px"
+        
          v-bind:src="pname.img"
         >
         </v-img>
@@ -21,7 +24,7 @@
         <p>{{pname.description}}</p>
         </v-card-text>
         </v-card></v-col>
-        <v-col cols="4">
+        <v-col cols="4" style="padding-left:50px; margin-top:20px;">
             <v-select color="#2496FF" 
            style="width: 394px;
                   height: 48px;
@@ -60,13 +63,13 @@
           ></v-textarea>
         <v-btn rounded color="#2695FF" style="color:white; text-transform:capitalize; font-weight:normal;">Submit</v-btn>
         </v-col>
-      <v-col class="d-flex" cols="12" sm="6">
+      <!-- <v-col class="d-flex" cols="12" sm="6">
           <v-select
             :items="review"
             label="Outlined style"
             outlined
           ></v-select>
-        </v-col>
+        </v-col> -->
     <!-- <v-col cols="8" class="text" style=" padding-right:25px;background-color:orange"><p style="">Project Title</p>
       <v-card 
         style="border-radius:11px; ">
