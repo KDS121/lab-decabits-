@@ -1,29 +1,29 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Contactus from '../components/Contactus';
+import Home from '../components/Home';
+import ContactUs from '../components/Contactus';
 import Services from '../components/Services';
 
 Vue.use(Router)
 
-export default new Router({
-    mode: 'history',
+const router = new Router({
+    mode: "history",
     routes: [{
             path: '/',
-            name: 'home',
-            component: App
-
+            name: 'Home',
+            component: Home
         },
         {
             path: '/contactus',
-            name: 'contactus',
-            component: Contactus
-
+            name: 'ContactUs',
+            component: ContactUs
         },
         {
             path: '/services',
-            name: 'services',
+            name: 'Services',
             component: Services
-
         }
     ]
 })
+
+export default router
