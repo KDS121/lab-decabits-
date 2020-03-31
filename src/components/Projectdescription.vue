@@ -1,9 +1,7 @@
 <template >
   <div class="project">
-    <v-container class="container"  fill-height=true fluid content-space-between=true 
-                  style="margin-top:50px; 
-                       
-                        width:90%;"
+    <b-container  fluid  
+                  style="margin-top:50px; width:90%;"
      >
   <v-row>
       <v-col cols="8">
@@ -125,7 +123,7 @@
         </v-col> -->
         
   </v-row>
-  </v-container>
+  </b-container>
  <div>
   <p class="desc"> Project Description</p>
   <p class="content">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -160,21 +158,49 @@
        unknown printer took a galley of type and scrambled it to make a type specimen book.
        </p>
 </div>
+        <!-- <p  @click="onChange" class="comments">Comments</p>
+        <v-col cols="12" style="width:85%; margin:0 auto; " >
+        <v-textarea id="commentVAL" style="border-radius:16px;"
+          solo
+          name="input-7-4"
+          label="Write your comment here"
+        ></v-textarea>
+            <v-btn  @click="showContact()" rounded color="#2496FF" dark style="width:130px; border-radius:16px;">Submit</v-btn>
+        <hr/>
+
+      </v-col> -->
+
 </div>
 
 </template>
 <script>
 export default {
+
+  // methods: {
+  //    showContact(){
+  //      console.log("hello");
+  //   },
+  //  },
   
     data: () => ({
       review: ['Good', 'Awesome', 'Loved it', 'Not Good'],
+      comment:'',
     }),
+    
 }
 </script>
 <style>
 @import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
+.comments{
+  font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-size: 38px;
+        font-weight: light;
+        margin-top:50px; margin-left:128px; width:90%;
+        color: #333333;
+}
 .desc{
   font-family: 'Roboto', sans-serif;
         font-style: normal;

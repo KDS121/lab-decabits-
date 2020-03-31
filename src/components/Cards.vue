@@ -1,8 +1,8 @@
 <template>
-<div>
+
     <div  class="cards">
      
-  <div id="skl" style="padding-top:70px">
+  <div id="skl" style="padding-top:70px;">
     <v-row>
       <v-col  v-for="(item,i) in Itemfilter" :key="i" cols="6" sm="4">
         <v-skeleton-loader 
@@ -15,9 +15,8 @@
             </v-row>
      </div>
 
- 
+      <b-container  id="crd" style="display:none; width:90% " fluid>
 
-      <v-container  id="crd" style="display:none" fluid>
         <v-row  no-gutters>
 
         <v-col cols="6" sm="4" v-for="(item,i) in Itemfilter" :key="i">
@@ -83,9 +82,13 @@
           </v-hover>
           </v-col>
           </v-row>
-          </v-container>
+
+      </b-container>
+
+    
+        
           </div>
-          </div>
+         
 </template>
  <script>
 
@@ -93,7 +96,8 @@
    methods: {
      reserve: function({item,i}){
        this.$emit("cardClicked",{item,i})
-     }
+     },
+    
    },
    mounted(){
      setTimeout( () => {
@@ -170,6 +174,7 @@
 </script>
 <style>
 .cards{
-  margin-top: 400px;
+  margin-top: 420px;
 }
-</style>
+
+ </style>
