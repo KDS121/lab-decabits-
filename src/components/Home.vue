@@ -48,7 +48,7 @@
        <div id="desc" style="height:20px;">
         </div>
       <Projectdescription :pname="singleItem" style="display:none;" id="pdesc" />
-      <comments/>
+      <comments  style="display:none;" id="cmnt"/>
     </v-content> 
   </v-app>
   <router-view/>
@@ -138,6 +138,7 @@ export default {
     onchildClick(value) {
       
       document.getElementById("pdesc").style.display="";
+      document.getElementById("cmnt").style.display="";
       console.log(this.singleItem)
        this.singleItem.pname = value.item.pname;
          this.singleItem.img = value.item.img;

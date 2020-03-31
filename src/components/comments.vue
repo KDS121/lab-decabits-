@@ -2,26 +2,58 @@
 <div>
     <p  @click="onChange" class="comments">Comments</p>
         <v-col cols="12" style="width:85%; margin:0 auto; " >
-        <v-textarea id="commentVAL" style="border-radius:16px;"
-         @change="e => showContact()"
-          solo
-          name="input-7-4"
-          label="Write your comment here"
-        ></v-textarea>
-            <v-btn @change="showContact()"  rounded color="#2496FF" dark style="width:130px; border-radius:16px;">Submit</v-btn>
+        <textarea id="commentVAL" style="border-radius:16px; width:90%; height:135px; padding:7px; box-shadow: 0px 4px 4px rgba(184, 184, 184, 0.25); border: 0.5px solid #C4C4C4;"
+        
+        type="text"
+         @change="showContact"
+          name="input"
+          placeholder="  Write your comment here"
+        />
+            <v-btn @click="submitComment()"  rounded color="#2496FF" dark style="width:130px; border-radius:16px;">Submit</v-btn>
         <hr/>
 
       </v-col>
+      <div style="width:85%; margin: 0 auto; height: fit-content;">
+          <v-col  v-for="(item,i) in commentOutput" :key="i" cols="12">
+              <div style="display:flex">
+                <i class="fas fa-user fa-2x" style="margin-right:15px"></i>
+                <p>{{item}}</p>
+               </div>
+              <hr />
+          </v-col>
+         
+      </div>
 </div>
 </template>
 <script>
 export default {
+  beforeMount(){
+    
+    for(let i=0;i<3;i++){
+      this.commentOutput[i]=localStorage.getItem("comments"+i)
+    }
+  },
     methods: {
          showContact(e){
-       console.log(e.target.value);
-       const com =document.getElementById("commentVAL")
-       console.log(com)
+           console.log(e.target.value)
+           let com = {
+             comment:e.target.value
+           }
+       this.commentInput.push(com)
     },
+         submitComment(){
+           console.log(this.commentInput)
+       this.commentInput.map((comment,index) => [
+          localStorage.setItem("comments"+index,comment.comment)
+       ])
+    },
+    },
+    data(){
+      return{
+        commentInput:[],
+        commentOutput:[],
+       
+      }
     }
 }
 </script>
