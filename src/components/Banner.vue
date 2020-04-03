@@ -16,27 +16,29 @@
         :src="item.src"
         reverse-transition="fade-transition"
         transition="fade-transition"
+        style="width:100%;"
       >
       </v-carousel-item>
       </v-carousel>
 </template>
 <script>
+import Bannerimage from '../assets/banner1.svg';
+import Bannerimage2 from '../assets/banner2.svg';
+import Bannerimage3 from '../assets/banner3.svg';
 export default {
     data () {
       return {
         items: [
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg',
+            src: Bannerimage,
           },
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
+            src: Bannerimage2,
           },
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
+            src: Bannerimage3,
           },
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
-          },
+          
         ],
       }
     },

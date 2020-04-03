@@ -62,9 +62,7 @@
           <v-chip-group
               column 
           >
-          <v-chip 
-            color="#3389C2"
-            text-color="white">react</v-chip>
+          
           <v-chip color="#3389C2" text-color="white" v-for="tag in item.tags" :key="tag">{{tag}}</v-chip>
           </v-chip-group>
           </v-card-text>
@@ -91,7 +89,7 @@
          
 </template>
  <script>
-
+ import logomakerimage from '../assets/cardimage.svg';
   export default {
    methods: {
      reserve: function({item,i}){
@@ -104,7 +102,7 @@
        console.log("3s elapsed!")
         document.getElementById("crd").style.display=="none"?document.getElementById("crd").style.display="":null
         document.getElementById("skl").style.display==""? document.getElementById("skl").style.display="none":null
-     }, 5000) ,
+     }, 3000) ,
      setTimeout( () => {
        this.$emit("AllItems",this.items)
      }, 0),
@@ -120,53 +118,53 @@
         return {
             items :  [
                 { 
-                 img: 'https://i.picsum.photos/id/169/300/300.jpg' , 
-                 pname: 'Dogs',
-                 rating: 5, 
-                 numberOfPeopleRated: 143,
-                 description : 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed ', 
-                 tags: ["bootstrap", "javascript","html"]
-                }
-               ,{
-                 img: 'https://i.picsum.photos/id/111/300/300.jpg' , 
-                 pname: 'CAR',
-                 rating: 3, 
-                 numberOfPeopleRated: 143,
-                 description : 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed ', 
-                 tags: ["vue", "css","html"]
-                 }
-               ,{
-                  img: 'https://i.picsum.photos/id/239/300/300.jpg' , 
-                 pname: 'flower',
-                 rating: 2, 
-                 numberOfPeopleRated: 143,
-                 description : 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed ', 
-                 tags: ["javascript", "css","kds"] 
-                 }
-                ,{
-                 img: 'https://i.picsum.photos/id/249/300/300.jpg' , 
-                 pname: 'Country',
+                 img: logomakerimage , 
+                 pname: 'Logo Maker',
                  rating: 4, 
                  numberOfPeopleRated: 143,
-                 description : 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed ', 
-                 tags: ["sid", "android","html"]
+                 description : 'Logomaker is designed to give small businesses a headstart with its free services.You can pick your favorite font, color, icon, background & layout to style a rich look logo.Download your favourite pick in all formats like PNG, SVG & JPG, No broken pixels & vast range of options is what we aim to provide our users with.', 
+                 tags: ["Vue.js", "HTML","CSS","Fabric.js"]
                 }
-                ,{
-                 img: 'https://i.picsum.photos/id/219/300/300.jpg' , 
-                 pname: 'Tiger',
-                 rating: 1, 
-                 numberOfPeopleRated: 143,
-                 description : 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed ', 
-                 tags: ["javascript", "css","ashesh"]
-                }
-                ,{
-                 img: 'https://i.picsum.photos/id/119/300/300.jpg' , 
-                 pname: 'Macbook',
-                 rating: 4, 
-                 numberOfPeopleRated: 143,
-                 description :'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed ', 
-                 tags: ["swift", "css","html"]
-                }
+              //  ,{
+              //    img: 'https://i.picsum.photos/id/111/300/300.jpg' , 
+              //    pname: 'CAR',
+              //    rating: 3, 
+              //    numberOfPeopleRated: 143,
+              //    description : 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed ', 
+              //    tags: ["vue", "css","html"]
+              //    }
+              //  ,{
+              //     img: 'https://i.picsum.photos/id/239/300/300.jpg' , 
+              //    pname: 'flower',
+              //    rating: 2, 
+              //    numberOfPeopleRated: 143,
+              //    description : 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed ', 
+              //    tags: ["javascript", "css","kds"] 
+              //    }
+              //   ,{
+              //    img: 'https://i.picsum.photos/id/249/300/300.jpg' , 
+              //    pname: 'Country',
+              //    rating: 4, 
+              //    numberOfPeopleRated: 143,
+              //    description : 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed ', 
+              //    tags: ["sid", "android","html"]
+              //   }
+              //   ,{
+              //    img: 'https://i.picsum.photos/id/219/300/300.jpg' , 
+              //    pname: 'Tiger',
+              //    rating: 1, 
+              //    numberOfPeopleRated: 143,
+              //    description : 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed ', 
+              //    tags: ["javascript", "css","ashesh"]
+              //   }
+              //   ,{
+              //    img: 'https://i.picsum.photos/id/119/300/300.jpg' , 
+              //    pname: 'Macbook',
+              //    rating: 4, 
+              //    numberOfPeopleRated: 143,
+              //    description :'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed ', 
+              //    tags: ["swift", "css","html"]
+              //   }
             ]
         }
     }

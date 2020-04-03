@@ -9,7 +9,7 @@
           name="input"
           placeholder="  Write your comment here"
         />
-            <v-btn @click="submitComment()"  rounded color="#2496FF" dark style="width:130px; border-radius:16px;">Submit</v-btn>
+            <v-btn @click="submitComment()"  rounded color="#2496FF" dark style="width:130px; border-radius:16px; margin-top:10px;">Submit</v-btn>
         <hr/>
 
       </v-col>

@@ -64,11 +64,82 @@
       </form>
       <b-button class="mt-3 mx-auto" variant="primary">Submit</b-button>
     </b-modal>
+  <div style="margin-top:100px;">
+     <div class="container-fluid service" style="text-align:center;">
+        <div class="row" style=" width:50%; text-align:center; margin:0 auto;">
+            <div class="col-md-12">
+                <h1>Services</h1>
+                <p>We are a startup incubator and we strictly follow Agile and test driven development.</p>
+            </div>
+            
+        </div>
+    </div>
+     <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="../assets/webdevelopment.svg" class="column-image img-responsive" alt="Web Development">
+                <h3 class="service-content">Web Development</h3>
+                <p class="service-content">We develop Scalable Web Applications that can handle traffic of million
+                    users, Cloud
+                    based Web Apps on AWS/Google Services. We also provide Hosting on Cloud Based Solutions.</p>
+            </div>
+            <div class="col-md-4">
+                <img src="../assets/webdesign.svg" class="column-image img-responsive" alt="Web Design">
+                <h3 class="service-content">Web Designing</h3>
+                <p class="service-content">Our Goal is to provide Simple and Smart Websites which are Easy To Navigate
+                    and
+                    Responsive in Nature. We use Atomic Design Methodology to publish the best possible Results.</p>
+            </div>
+            <div class="col-md-4">
+                <img src="../assets/mobiledevelopment.svg" class="column-image img-responsive"
+                    alt="Mobile Development">
+                <h3 class="service-content">Mobile Developement</h3>
+                <p class="service-content">We provide Application development across Android and iOS with agile UI/UX
+                    solutions.
+                </p>
+            </div>
+        </div>
+    </div>
+  </div>
+
     </div>
 </template>
-
+<style>
+.navdrawer{
+        box-shadow: 2px 0px 4px rgba(78, 78, 78, 0.25);
+        border-radius : 0px;
+        border:0; 
+          }
+.navicon{
+        transform : rotate(90deg);
+        }
+        .list{
+        width: 70%;
+        margin: 6px;
+      }
+  .icons{
+    margin-bottom: 20px;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+.column-image {
+  width: 90%;
+  height: 40%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1%;
+  margin-bottom: 4%;
+}
+.service-content {
+  text-align: center;
+  padding-top: 5px;
+}
+</style>
 
 <script>
+
     export default{
         data(){
             return{

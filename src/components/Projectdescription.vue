@@ -5,7 +5,7 @@
      >
   <v-row>
       <v-col cols="8">
-          <p class="headingPr">{{pname.pname}}</p>
+          <h3 class="headingPr">{{pname.pname}}</h3>
           <v-card 
         style="border-radius:11px 11px 0px 0px;">
         <v-img 
@@ -125,38 +125,18 @@
   </v-row>
   </b-container>
  <div>
-  <p class="desc"> Project Description</p>
-  <p class="content">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-      a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing
-       and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an 
-       unknown printer took a galley of type and scrambled it to make a type specimen book.
-       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-      a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing
-       and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an 
-       unknown printer took a galley of type and scrambled it to make a type specimen book.
-       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-      a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing
-       and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an 
-       unknown printer took a galley of type and scrambled it to make a type specimen book.
-       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-      a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing
-       and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an 
-       unknown printer took a galley of type and scrambled it to make a type specimen book.
-       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-      a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing
-       and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an 
-       unknown printer took a galley of type and scrambled it to make a type specimen book.
-       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-      a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing
-       and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an 
-       unknown printer took a galley of type and scrambled it to make a type specimen book.
-       </p>
+  <p class="desc"> Project Description & Setup</p>
+  <p class="content">Our foremost project at labs decabits is created with a vision to help other startups 
+    to flourish & grow with minimal investment. To begin with, we want to provide our customers with utmost convenience.</p>
+    <p class="content">Any consumer who wants to explore & design logomakes can begin with selecting/outlining a company name followed by picking fonts & case. The next step for creating the perfect trademark is 
+      connecting symbolic shades & colors to it. Move further by determining & specifying meaningful icons for a pleasing layout.</p>
+    <p class="content">Our high tech team of designers & developers have collaborated to fabricate the flawless logomakes. With frontend technology like Vue.JS, HTML & CSS- the project was set up & completed with precision & fruitful results. Apart from the basic technologies & coding, a very special part & copart of this project is contributed by an inbuilt canvas library called Fabric.JS.
+                        A powerful & simple library to build SVGs. With an easy yet robust tech stack, Labs.decabits delivered its very first 
+                        open source  tool for going live. </p>
+    <p class="content">A noteworthy detail & feature makes its free download service of the logos, in all formats like PNG, JPEG & SVG (With or without background)</p>
+    <p class="content">Any logo the consumer may create will directly be saved in the galleries, even if you are halfway through. Once you want 
+      to get back to the design, with a single click the consumer will be redirected to an editable file for making the needful alterations.</p>
+      <p class="content">Feel free to give your suggestions or feedback  in the following link or mail us at <a href="info@decabits.com">info@decabits.com</a></p>
 </div>
         <!-- <p  @click="onChange" class="comments">Comments</p>
         <v-col cols="12" style="width:85%; margin:0 auto; " >
@@ -192,7 +172,7 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap');
 .comments{
   font-family: 'Roboto', sans-serif;
         font-style: normal;
@@ -202,7 +182,6 @@ export default {
         color: #333333;
 }
 .desc{
-  font-family: 'Roboto', sans-serif;
         font-style: normal;
         font-size: 38px;
         font-weight: light;
@@ -213,7 +192,7 @@ export default {
 .headingPr{
     color: #333333;
     font-family: 'Roboto', sans-serif;
-    font-size: 38px;
+    font-size: 40px;
     }
 
 /* .theme--light.v-label {
@@ -237,9 +216,11 @@ export default {
         line-height: 66px;
     }
 .content{
+ font-family: 'Roboto';
          margin-top:50px; 
          margin-left:128px;
          width:85%;
+         
         }
 /* .project{
     margin-top:900px;
